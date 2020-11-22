@@ -8,6 +8,10 @@ if (isset($_POST['logOut'])) {
     Header('Location: /WB-final-project/?page=login');
 }
 
+
+
+
+
 $model = new listModel();
 $tasklist = $model->getAll();
 
@@ -17,7 +21,7 @@ $view->html();
 
 
 if (isset($_GET["action"]) && $_GET["action"] === "modify") {
-    if (isset($_GET["task_id"])) {
+    if (isset($_GET["task_id"]) && isset($_GET["order_id"])) {
         $task = $model->getById($_GET["task_id"]);
 
         $form = new modifyForm($task["task"], $task["order_id"], $task["checked"]);

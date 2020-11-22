@@ -35,8 +35,3 @@ class UserForm
   }
 }
 ?>
-
-<!-- mainīt paroles izskatu ar actiņu:
-document.getElementsByName('password')[0].setAttribute('type', 'text')
-document.getElementsByName('password')[0].setAttribute('type', 'password')
-+ pielikt actiņas elementu un tam pievienot listeneri kas šos pārslēdz-->

@@ -4,12 +4,14 @@ require_once __DIR__ . "/../helpers/database-wrapper.php";
 class listModel
 {
 
+
   public function getAll()
   {
     $sql = "SELECT * FROM tasklist";
     $response = DB::run($sql)->fetch_all(MYSQLI_ASSOC);
     return $response;
   }
+
 
 
   public function deleteById($id)
@@ -41,7 +43,7 @@ class listModel
 
   public function insertNew($task, $order_id)
   {
-    $sql = "INSERT INTO tasklist (task, order_id) VALUES ('$task', $order_id)";
+    $sql = "INSERT INTO tasklist (task, order_id) VALUES ('$task', '$order_id')";
     DB::run($sql);
   }
 }

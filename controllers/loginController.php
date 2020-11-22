@@ -16,6 +16,8 @@ if (!empty($_POST['username'])) {
       if ($isValidPassword) {
         session_start();
         $_SESSION['id'] = $response['username'];
+        $_SESSION['user_id'] = $response['user_id'];
+
         Header('Location: /WB-final-project/?page=list');
       } else {
         echo "Nepareiza parole!";
