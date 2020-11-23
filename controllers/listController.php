@@ -21,12 +21,15 @@ $view->html();
 
 
 if (isset($_GET["action"]) && $_GET["action"] === "modify") {
-    if (isset($_GET["task_id"]) && isset($_GET["order_id"])) {
+    if (isset($_GET["task_id"])) {
         $task = $model->getById($_GET["task_id"]);
-
-        $form = new modifyForm($task["task"], $task["order_id"], $task["checked"]);
+        $task["order_id"] = $_GET["order_id"];
+        $form = new modifyForm($task["task"], $task["id"], $task["order_id"], $task["checked"]);
     } else {
-        $form = new modifyForm();
+        $order_id = $_GET["last_order_id"];
+        $task = "";
+        $id = "";
+        $form = new modifyForm($task, $id, $order_id);
     }
     $form->html();
 }

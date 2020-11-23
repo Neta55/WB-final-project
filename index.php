@@ -10,7 +10,7 @@ if (isset($_GET['page'])) {
       require_once __DIR__ . "/helpers/head.php";
       require_once $file;
       require_once __DIR__ . "/helpers/foot.php";
-    } else if (isset($_SESSION['id'])) {
+    } else if (isset($_SESSION['username'])) {
       require_once __DIR__ . "/helpers/head.php";
       require_once $file;
       require_once __DIR__ . "/helpers/foot.php";

@@ -7,7 +7,8 @@ class listModel
 
   public function getAll()
   {
-    $sql = "SELECT * FROM tasklist";
+    $user_id = $_SESSION['id'];
+    $sql = "SELECT * FROM tasklist WHERE user_id=$user_id";
     $response = DB::run($sql)->fetch_all(MYSQLI_ASSOC);
     return $response;
   }
@@ -34,16 +35,14 @@ class listModel
 
   public function updateById($id, $task, $order_id, $checked)
   {
-    $order_id =
-      $checked = isset($_POST['checked']) ? 1 : 0;
-
     $sql = "UPDATE tasklist SET task = '$task', order_id = $order_id, checked = $checked WHERE id=$id";
     DB::run($sql);
   }
 
-  public function insertNew($task, $order_id)
+  public function insertNew($task, $order_id, $user_id)
   {
-    $sql = "INSERT INTO tasklist (task, order_id) VALUES ('$task', '$order_id')";
+    $user_id = $_SESSION['id'];
+    $sql = "INSERT INTO tasklist (task, order_id, user_id) VALUES ('$task', '$order_id', $user_id)";
     DB::run($sql);
   }
 }

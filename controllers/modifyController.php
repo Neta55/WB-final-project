@@ -14,6 +14,7 @@ if (!empty($_POST["id"])) {
   $model->insertNew(
     $_POST["task"],
     $_POST["order_id"],
+    $_POST["user_id"],
   );
 }
 

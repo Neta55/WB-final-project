@@ -15,8 +15,8 @@ if (!empty($_POST['username'])) {
       $isValidPassword = password_verify($password, $response['password']);
       if ($isValidPassword) {
         session_start();
-        $_SESSION['id'] = $response['username'];
-        $_SESSION['user_id'] = $response['user_id'];
+        $_SESSION['username'] = $response['username'];
+        $_SESSION['id'] = $response['id'];
 
         Header('Location: /WB-final-project/?page=list');
       } else {

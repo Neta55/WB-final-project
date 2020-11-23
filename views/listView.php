@@ -13,15 +13,18 @@ class listView
 
   public function html()
   { ?> <div class="">
+      <h1>Lietotājs <?= $_SESSION['username'] ?> ir pieslēdzies!</h1>
       <form method="POST">
-        <h1>Lietotājs <?= $_SESSION['id'] ?> ir pieslēdzies!</h1>
-        <!-- <p> Viņa user_id ir <?= $_SESSION['user_id'] ?></p> -->
+        <p> Viņa user_id ir <?= $_SESSION['id'] ?></p>
         <input name="logOut" type="hidden">
         <button type="submit">Log out</button>
       </form>
     </div><?php
+
+
           foreach ($this->tasklist as $key => $task) {
             $order_id = $key + 1;
+            $last_order_id = sizeof($this->tasklist) + 1;
           ?>
       <table class="checked-null">
         <tbody>
@@ -29,9 +32,9 @@ class listView
             <td><?= $task["task"] ?></td>
             <td>
               <input type="checkbox" name="checked" <?php if ($task["checked"] == '0') {
-                                                      echo "checked";
-                                                    } else {
                                                       echo "";
+                                                    } else {
+                                                      echo "checked";
                                                     } ?>>
             </td>
             <td>
@@ -44,11 +47,12 @@ class listView
 
 
     <?php }
+
     ?>
 
 
 
-    <a href="/WB-final-project/?page=list&action=modify">Add task</a>
+    <a href="/WB-final-project/?page=list&action=modify&last_order_id=<?= $last_order_id ?>">Add task</a>
 
 
 <?php
