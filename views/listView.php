@@ -38,16 +38,16 @@ class listView
             <td><?= $task["task"] ?></td>
             <td>
               <form action="/WB-final-project/?page=check&task_id=<?= $task['id'] ?>&order_id=<?= $ch_order_id ?>&checkbox_value=1" method="post">
-                <input type="checkbox" name="checked" value="1" <?php if ($task["checked"] == '0') {
-                                                                  echo "";
-                                                                } else {
-                                                                  echo "checked";
-                                                                } ?> onchange="this.form.submit()">
+                <input type="checkbox" name="checked" <?php if ($task["checked"] == '0') {
+                                                        echo "";
+                                                      } else {
+                                                        echo "checked";
+                                                      } ?> onchange="this.form.submit()">
               </form>
             </td>
             <td>
               <a href="/WB-final-project/?page=list&action=modify&task_id=<?= $task['id'] ?>&order_id=<?= $order_id ?>">Edit<?= $order_id ?></a>
-              <a href="/WB-final-project/?page=delete&task_id=<?= $task['id'] ?>">Delete</a>
+              <a href="/WB-final-project/?page=delete&task_id=<?= $task['id'] ?>">Delete<?= $ch_order_id ?></a>
             </td>
           </tr>
 
@@ -70,16 +70,16 @@ class listView
             <td><?= $task["task"] ?></td>
             <td>
               <form action="/WB-final-project/?page=check&task_id=<?= $task['id'] ?>&order_id=<?= $ch_order_id ?>&checkbox_value=0" method="post">
-                <input type="checkbox" name="checked" value="0" <?php if ($task["checked"] == '0') {
-                                                                  echo "";
-                                                                } else {
-                                                                  echo "checked";
-                                                                } ?> onchange="this.form.submit()">
+                <input type="checkbox" name="checked" <?php if ($task["checked"] == '1') {
+                                                        echo "checked";
+                                                      } else {
+                                                        echo "";
+                                                      } ?> onchange="this.form.submit()">
               </form>
             </td>
             <td>
 
-              <a href="/WB-final-project/?page=delete&task_id=<?= $task['id'] ?>">Delete</a>
+              <a href="/WB-final-project/?page=delete&task_id=<?= $task['id'] ?>">Delete<?= $order_id ?></a>
             </td>
           </tr>
 
