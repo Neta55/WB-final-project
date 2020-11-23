@@ -514,3 +514,10 @@ h3 {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     
 }
+table {
+    border: 1px solid grey;
+}
+
+.checked-1 {
+    text-decoration: line-through;
+}

@@ -10,5 +10,3 @@
 </head>
 
 <body>
-
-  <h1>Kur ir?</h1>

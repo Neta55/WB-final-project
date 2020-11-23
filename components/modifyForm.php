@@ -21,9 +21,9 @@ class modifyForm
 ?>
     <form action="/WB-final-project/?page=modify" method="POST">
       <input name="task" value="<?= $this->task ?>">
-      <input type="text" name="id" value="<?= $this->id ?>">
-      <input type="text" name="order_id" value="<?= $this->order_id ?>">
-      <input type="text" name="checked" value="<?= $this->checked ?>">
+      <input type="hidden" name="id" value="<?= $this->id ?>">
+      <input type="hidden" name="order_id" value="<?= $this->order_id ?>">
+      <input type="hidden" name="checked" value="<?= $this->checked ?>">
 
 
       <button type="submit">Saglabāt</button>

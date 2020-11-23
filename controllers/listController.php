@@ -8,14 +8,17 @@ if (isset($_POST['logOut'])) {
     Header('Location: /WB-final-project/?page=login');
 }
 
+// $model = new listModel();
+// $tasklist = $model->getAll();
 
-
-
+// $view = new listView($tasklist);
+// $view->html();
 
 $model = new listModel();
-$tasklist = $model->getAll();
+$tasklistUnchecked = $model->getAllUnchecked();
+$tasklistChecked = $model->getAllChecked();
 
-$view = new listView($tasklist);
+$view = new listView($tasklistUnchecked, $tasklistChecked);
 $view->html();
 
 
