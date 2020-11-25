@@ -1,6 +1,6 @@
 body {
-    /* background-image: url("images/TILE2.svg");
-    background-size: 20px; */
+    background-image: url("images/TILE2.svg");
+    background-size: 20px;
 
     /* background: url("images/1.jpg") no-repeat center fixed;
     background-size: cover; */
@@ -82,10 +82,10 @@ a.button {
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none;
-    text-decoration: none;
+   
 }
 
-button {
+button, a {
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
@@ -97,6 +97,7 @@ button {
     background-color: none;
     padding: 0;
     margin: 0;
+    text-decoration: none;
     
 }
 
@@ -174,84 +175,14 @@ button {
     background-size: 28px;
 }
 
-
-
-
-
-.add-btn {
-
-    padding: 10px;
-
-    background-color: rgb(90, 225, 225);
-    background: center / contain no-repeat url("images/add_white.svg");
-    background-size: 40px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 4px;
-    box-shadow: none;
-    border: 0px;
-    outline: none;
-    cursor: pointer;
-    margin: 5px 18px 5px 5px;
-}  
-.add-btn .add-btn-img {
-    
-}
-
-.add-btn:hover {
-    background: center / contain no-repeat url("images/add.svg")  white;
-    background-size: 30px;
-
-}
-
-
-.delete-btn {
-
-    background: center / contain no-repeat url("images/delete_tumss.svg");
-    width: 40px;
-    height: 40px;  
-    background-size: 22px;
-    margin-bottom: 0;
-    padding: 0;
-    box-shadow: none;
-    border: 0px;
-    outline: none;
-    cursor: pointer;
-} 
-
-.delete-btn:hover {
-    background: center / contain no-repeat url("images/delete_hov.svg");
-    background-size: 25px;
-}
-
-.delete-btn-1 {
-
-    background: center / contain no-repeat url("images/delete.svg");
-    width: 40px;
-    height: 40px;  
-    background-size: 22px;
-    margin-bottom: 0;
-    padding: 0;
-    box-shadow: none;
-    border: 0px;
-    outline: none;
-    cursor: pointer;
-} 
-
-.delete-btn-1:hover {
-    background: center / contain no-repeat url("images/delete_hov.svg");
-    background-size: 25px;
-}
-
 .check-btn {
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none;
-    background: center / contain no-repeat url("images/check_hov.svg") white;
-    width: 40px;
-    height: 40px;
+    background: center / contain no-repeat url("images/check_hov.svg");
+    width: 35px;
+    height: 35px;
     background-size: 22px;
     box-shadow: none;
     border: 0px;
@@ -261,49 +192,30 @@ button {
     padding: 0;
 } 
 
-
-
 .check-btn:hover {
 
-    background: center / contain no-repeat url("images/check.svg") white;
+    background: center / contain no-repeat url("images/check.svg");
     background-size: 25px;
 }
 
 .check-btn:checked {
 
-    background: center / contain no-repeat url("images/check_submit.svg") white;
+    background: center / contain no-repeat url("images/check_submit.svg") ;
     background-size: 22px;
 }
 .check-btn:checked:hover {
 
-    background: center / contain no-repeat url("images/check_submit_cov.svg") white;
+    background: center / contain no-repeat url("images/check_submit_cov.svg");
     background-size: 25px;
 }
-
-.update-btn {
-
-    background: center / contain no-repeat url("images/update_hov.svg") white;
-    width: 40px;
-    height: 50px;
-    background-size: 29px;
-    box-shadow: none;
-    border: 0px;
-    outline: none;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-bottom: 0;
-    padding: 0;
-} 
-
 
 .edit-btn {
 
     background: center / contain no-repeat url("images/edit_hov.svg") white;
-    width: 40px;
-    height: 40px;
-    background-size: 29px;
+    width: 35px;
+    height: 35px;
+    background-size: 25px;
     cursor: pointer;
-    margin: 0;
 } 
 
 .edit-btn:hover {
@@ -311,69 +223,83 @@ button {
     background: center / contain no-repeat url("images/edit.svg") white;
     background-size: 29px;
 }
-/* 
-.todoList {
+
+
+.delete-btn {
+
+    background: center / contain no-repeat url("images/delete_tumss.svg");
+    width: 35px;
+    height: 35px;
+    background-size: 20px;
+
+} 
+
+.delete-btn:hover {
+    background: center / contain no-repeat url("images/delete_hov.svg");
+    background-size: 23px;
+}
+
+.delete-btn-1 {
+
+    background: center / contain no-repeat url("images/delete.svg");
+    width: 35px;
+    height: 35px; 
+    background-size: 20px;
+} 
+
+.delete-btn-1:hover {
+    background: center / contain no-repeat url("images/delete_hov.svg");
+    background-size: 23px;
+}
+
+.add-btn {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgb(0, 32, 63);
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+    
    
-    display: grid;
-    grid-template-columns: auto 50px;
-    grid-template-rows: auto;
-    grid-template-areas: "int-cont todo_delete";
-    align-items: center;
-    width: 99%;
-    min-height: 10px;
-    margin:  0px 0px 30px 5px;
-    border-bottom: 2px solid rgb(90, 225, 225);
+}  
+
+.add-btn:hover {
+    font-size: 1.05rem;
+    background-color: rgb(90, 225, 225);
+    color:rgb(0, 32, 63);
 }
-.int-cont {
-    width: 100%;
-    min-height: auto;
-    display: grid;
-    grid-template-columns: 50px auto 50px 50px;
-    grid-template-rows: auto;
-    grid-template-areas: "todo_check todo_task todo_edit todo_update";
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-
-.todo_check {grid-area: todo_check}
-.todo_task {grid-area: todo_task}
-.todo_edit {grid-area: todo_edit}
-.todo_update {grid-area: todo_update}
-.todo_delete {grid-area: todo_delete}
-
-.todoText {
-    font-size: 18px;
-    width: 95%;
-    color: rgb(0, 32, 63);
-    padding-left: 15px;
-    font-weight: 400;
-    margin-bottom: 10px;
+.center { 
+    max-width: 300px;
+    margin: 30px auto;
+    text-align: center;
     
 }
-
-.Done-1 {
-    font-size: 18px;
-    width: 95%;
-    color:  rgb(90, 225, 225);
-    padding-left: 15px;
-    font-weight: 400;
-    margin-bottom: 10px;
-    text-decoration: line-through;
-    
-} */
-
 
 
 
 table {
-    border: 1px solid grey;
+    height: auto;
+    width: 500px;
+    background-color: white;
+    margin: 80px auto 20px;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
-.checked-1 {
-    text-decoration: line-through;
+.checked-no {
+    padding-left: 0;
 }
+
+.checked-yes {
+    margin-top: 10px;
+    text-decoration: line-through;
+    color: rgb(90, 225, 225);
+}
+
 
 
 /* //pop up// */ 
@@ -458,4 +384,17 @@ table {
     color: white;
     text-align: center;
     box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.drag-btn {
+    background: center / contain no-repeat url("images/drag.svg");
+    width: 35px;
+    height: 35px; 
+    background-size: 27px;
+    cursor: pointer;
+}
+
+.drag-btn:hover, .drag-btn:active {
+    background: center / contain no-repeat url("images/drag_hov.svg");
+    background-size: 35px;
 }
