@@ -18,11 +18,11 @@ class listView
 
 
   public function html()
-  { ?> <div class="">
-      <h1>Lietotājs <?= $_SESSION['username'] ?> ir pieslēdzies!</h1>
-      <form method="POST">
+  { ?> <div class="header">
+      <h4>Lietotājs "<?= $_SESSION['username'] ?>" ir pieslēdzies!</h4>
+      <form method="POST" class="inline">
         <input name="logOut" type="hidden">
-        <button type="submit">Log out</button>
+        <button type="submit" class="logout-btn"></button>
       </form>
     </div>
     <table class="checked-0">
@@ -34,20 +34,25 @@ class listView
           $ch_order_id = sizeof($this->tasklistUnchecked) + 1;
         ?>
 
-          <tr>
-            <td><?= $task["task"] ?></td>
+          <tr order_id="<?= $order_id ?>" task="<?= $task['id'] ?>">
             <td>
               <form action="/WB-final-project/?page=check&task_id=<?= $task['id'] ?>&order_id=<?= $ch_order_id ?>&checkbox_value=1" method="post">
-                <input type="checkbox" name="checked" <?php if ($task["checked"] == '0') {
-                                                        echo "";
-                                                      } else {
-                                                        echo "checked";
-                                                      } ?> onchange="this.form.submit()">
+                <input type="checkbox" class="check-btn" name="checked" <?php if ($task["checked"] == '0') {
+                                                                          echo "";
+                                                                        } else {
+                                                                          echo "checked";
+                                                                        } ?> onchange="this.form.submit()">
               </form>
             </td>
+            <td><?= $task["task"] ?></td>
+
             <td>
-              <a href="/WB-final-project/?page=list&action=modify&task_id=<?= $task['id'] ?>&order_id=<?= $order_id ?>">Edit<?= $order_id ?></a>
-              <a href="/WB-final-project/?page=delete&task_id=<?= $task['id'] ?>">Delete<?= $ch_order_id ?></a>
+              <a href="/WB-final-project/?page=list&action=modify&task_id=<?= $task['id'] ?>&order_id=<?= $order_id ?>">
+                <div class="button edit-btn inline"></div>
+              </a>
+              <a href="/WB-final-project/?page=delete&task_id=<?= $task['id'] ?>">
+                <div class="delete-btn inline"></div>
+              </a>
             </td>
           </tr>
 
@@ -56,7 +61,8 @@ class listView
         <?php } ?>
       </tbody>
     </table>
-    <a href="/WB-final-project/?page=list&action=modify&last_order_id=<?= $last_order_id ?>">Add task</a>
+
+    <a href="/WB-final-project/?page=list&action=modify&last_order_id=<?= $last_order_id ?>">Add task<div class="add-btn inline"></div> </a>
     <h4>Jau padarīti</h4>
     <table class="checked-1">
       <tbody>
@@ -66,20 +72,23 @@ class listView
           $ch_order_id = sizeof($this->tasklistUnchecked) + 1;
         ?>
 
-          <tr>
-            <td><?= $task["task"] ?></td>
+          <tr order_id="<?= $order_id ?>" task="<?= $task['id'] ?>">
             <td>
               <form action="/WB-final-project/?page=check&task_id=<?= $task['id'] ?>&order_id=<?= $ch_order_id ?>&checkbox_value=0" method="post">
-                <input type="checkbox" name="checked" <?php if ($task["checked"] == '1') {
-                                                        echo "checked";
-                                                      } else {
-                                                        echo "";
-                                                      } ?> onchange="this.form.submit()">
+                <input type="checkbox" name="checked" class="check-btn" <?php if ($task["checked"] == '1') {
+                                                                          echo "checked";
+                                                                        } else {
+                                                                          echo "";
+                                                                        } ?> onchange="this.form.submit()">
               </form>
             </td>
+            <td><?= $task["task"] ?></td>
+
             <td>
 
-              <a href="/WB-final-project/?page=delete&task_id=<?= $task['id'] ?>">Delete<?= $order_id ?></a>
+              <a href="/WB-final-project/?page=delete&task_id=<?= $task['id'] ?>">
+                <div class="delete-btn-1 inline"></div>
+              </a>
             </td>
           </tr>
 

@@ -6,10 +6,11 @@ class UserForm
   public function html()
   {
 ?>
-    <div class="header1">
-      <h2><?= $this->getLogRegText() ?></h2>
-      <form method="POST" class="login2">
-        <div class="addUserImage"></div>
+    <div class="login">
+      <h4><?= $this->getLogRegText() ?>
+        <a href="<?= $this->getTogleLogReg() ?>" class="button reg-log-btn"><?= $this->getLogRegBtnText() ?></a>!</h4>
+      <form method="POST" class="login-wraper">
+        <div class="<?= $this->getTogleImgClass() ?>"></div>
         <label>Lietotājvārds
           <input class="login-input" type="text" name="username" required></label>
         <label>Parole
@@ -32,6 +33,38 @@ class UserForm
   public function getLogRegText()
   {
     return $this->LogRegText;
+  }
+
+  public function setLogRegBtnText($text)
+  {
+    $this->LogRegBtnText = $text;
+  }
+
+
+  public function getLogRegBtnText()
+  {
+    return $this->LogRegBtnText;
+  }
+
+  public function setTogleLogReg($text)
+  {
+    $this->TogleLogReg = $text;
+  }
+
+  public function getTogleLogReg()
+  {
+    return $this->TogleLogReg;
+  }
+
+
+  public function setTogleImgClass($text)
+  {
+    $this->TogleImgClass = $text;
+  }
+
+  public function getTogleImgClass()
+  {
+    return $this->TogleImgClass;
   }
 }
 ?>

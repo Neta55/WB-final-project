@@ -19,15 +19,19 @@ class modifyForm
   {
 
 ?>
-    <form action="/WB-final-project/?page=modify" method="POST">
-      <input name="task" value="<?= $this->task ?>">
-      <input type="text" name="id" value="<?= $this->id ?>">
-      <input type="text" name="order_id" value="<?= $this->order_id ?>">
-      <input type="text" name="checked" value="ch<?= $this->checked ?>">
+    <div id="cover">
+      <div id="pop-up">
+        <form action="/WB-final-project/?page=modify" method="POST" class="login-wraper">
+          <input class="add-input" name="task" value="<?= $this->task ?>">
+          <input type="hidden" name="id" value="<?= $this->id ?>">
+          <input type="hidden" name="order_id" value="<?= $this->order_id ?>">
+          <input type="hidden" name="checked" value="<?= $this->checked ?>">
 
 
-      <button type="submit">Saglabāt</button>
-    </form>
+          <button class="popup-btn" type="submit">Saglabāt</button>
+        </form>
+      </div>
+    </div>
 <?php
   }
 }

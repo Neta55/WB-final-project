@@ -20,15 +20,33 @@ if (!empty($_POST['username'])) {
 
         Header('Location: /WB-final-project/?page=list');
       } else {
-        echo "Nepareiza parole!";
+        echo "<div id='cover'>";
+        echo "<div id='pop-up'>";
+        echo "<h3>Nepareiza parole!</h3>";
+        echo "<button id='popup-btn' onclick='popupDisapear()'>Mēģināt vēlreiz</button>";
+        echo "</div>";
+        echo "</div>";
       }
     } else {
-      echo "Parole nav ievadīta, ievadiet!";
+      echo "<div id='cover'>";
+      echo "<div id='pop-up'>";
+      echo "<h3>Parole nav ievadīta, ievadiet!</h3>";
+      echo "<button id='popup-btn' onclick='popupDisapear()'>Mēģināt vēlreiz</button>";
+      echo "</div>";
+      echo "</div>";
     }
   } else {
-    echo "Lietotājs <strong> '$username' </strong> neeksistē!";
+    echo "<div id='cover'>";
+    echo "<div id='pop-up'>";
+    echo "<h3>Lietotājs <strong> '$username' </strong> neeksistē!</h3>";
+    echo "<button id='popup-btn' onclick='popupDisapear()'>Mēģināt vēlreiz</button>";
+    echo "</div>";
+    echo "</div>";
   }
 }
 $form = new UserForm();
-$form->setLogRegText('Lai piekļūtu savam sarakstam, lūdzu ievadi lietotājvārdu un paroli!');
+$form->setLogRegText('Lai piekļūtu savam sarakstam, lūdzu ievadi lietotājvārdu un paroli. Ja tādu nav, dodies ');
+$form->setLogRegBtnText("reģistrēties");
+$form->setTogleLogReg("/WB-final-project/?page=register");
+$form->setTogleImgClass("userImage");
 $form->html();
