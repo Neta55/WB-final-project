@@ -6,9 +6,13 @@ class UserForm
   public function html()
   {
 ?>
-    <div class="login">
+    <div class="header">
       <h4><?= $this->getLogRegText() ?>
-        <a href="<?= $this->getTogleLogReg() ?>" class="button reg-log-btn"><?= $this->getLogRegBtnText() ?></a>!</h4>
+        <a href="<?= $this->getTogleLogReg() ?>" class="button reg-log-btn"><?= $this->getLogRegBtnText() ?></a></h4>
+
+    </div>
+    <div class="login">
+
       <form method="POST" class="login-wraper">
         <div class="<?= $this->getTogleImgClass() ?>"></div>
         <label>Lietotājvārds

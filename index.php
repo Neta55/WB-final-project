@@ -1,11 +1,8 @@
 <?php
-// require_once __DIR__ . "/controllers/loginController.php";
 
 if (isset($_GET['page'])) {
   $file = __DIR__ . "/controllers/" . $_GET['page'] . "Controller.php";
   session_start();
-
-
 
   if (file_exists($file)) {
     if ($_GET['page'] === 'login' || $_GET['page'] === 'register') {

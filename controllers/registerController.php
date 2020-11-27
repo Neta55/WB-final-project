@@ -13,7 +13,7 @@ if (!empty($_POST["username"]) && !empty($_POST["password"])) {
       echo "<div id='cover'>";
       echo "<div id='pop-up'>";
       echo "<h3>Šis lietotājvārds ir aizņemts. Izvēlies citu!</h3>";
-      echo "<button class='popup-btn' onclick='popupDisapear()'>Mēģināt vēlreiz</button>";
+      echo "<button id='popup-btn' onclick='popupDisapear()'>Mēģināt vēlreiz</button>";
       echo "</div>";
       echo "</div>";
       $username = "";

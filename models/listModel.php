@@ -63,4 +63,14 @@ class listModel
     $sql = "UPDATE tasklist SET checked = $checked, order_id = $order_id WHERE id=$id";
     DB::run($sql);
   }
+
+  public function updateAfterMove($dataList)
+  {
+    foreach ($dataList as $data) {
+      $id = $data['task_id'];
+      $orderId = $data['order_id'];
+      $sql = "UPDATE tasklist SET order_id = $orderId WHERE id=$id";
+      DB::run($sql);
+    }
+  }
 }

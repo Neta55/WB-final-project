@@ -1,6 +1,6 @@
 body {
     background-image: url("images/TILE2.svg");
-    background-size: 20px;
+    background-size: 50px;
 
     /* background: url("images/1.jpg") no-repeat center fixed;
     background-size: cover; */
@@ -18,7 +18,7 @@ body, input, button {
 }
 
 h1 {
-    color: rgb(0, 32, 63);
+    color: #00203F;
     text-align: center;
     font-weight: bold;
   
@@ -29,16 +29,59 @@ h2, h4 {
     line-height: 1.2rem;
 }
 h3 {
-    color: rgb(0, 32, 63);
+    color: #00203F;
     text-align: center;
 }
+.header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    min-height: 60px;
+    text-align: center;
+    color: #fff;
+    background-color:#00203F;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
 
+.inline  {
+    display: inline-block;
+}
+.header h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 100;
+    vertical-align: top;
+    margin-block-end: 0px;
+}
+
+
+.header span {
+    font-size: 0.7rem;
+}
+
+.top {
+    vertical-align: top;
+    vertical-align: 10px;
+}
+.logout-btn {
+    background: center / contain no-repeat url("images/logout.svg");
+    width: 28px;
+    height: 28px;
+    background-size: 25px;
+    margin-bottom: -17px;
+
+}
+
+.logout-btn:hover {
+    background: center / contain no-repeat url("images/logout_hov.svg");
+    background-size: 28px;
+}
 .login {
     max-width: 400px;
-    margin: 30px auto;
+    margin: 80px auto;
     height: auto;
-    padding: 20px;
-    background-color:rgb(0, 32, 63);
+    padding: 30px 20px 20px;
+    background-color:#06d6d6;
     text-align: center;
     box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
@@ -63,26 +106,20 @@ h3 {
     appearance: none;
     width: 100%;
     height: 25px;
+    margin: 5px 0;
     border: none;
-    background-color: rgb(0, 32, 63) !important;
+    outline: none;
+    background-color: #06d6d6 !important;
     color:white;
-    font-size: 14px;
+    font-size: 1.2rem;
     font-weight: 100;
     border-bottom: solid 1px #fff;
-    margin: 5px 0;
     box-shadow: none;
+    transition: 0.3s;
 }
 
 .login input:hover {
-    border-bottom: solid 1px rgb(90, 225, 225);
-}
-
-a.button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-   
+    border: solid 1px #fff;
 }
 
 button, a {
@@ -102,14 +139,19 @@ button, a {
 }
 
 .reg-log-btn {
-    margin-left: 3px;
-    margin-right: 3px;
-    border-radius: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
     color: #fff;
+    vertical-align: middle;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     letter-spacing: 3px;
     font-weight: 100;
+    transition: 0.3s;
+}
+
+.reg-log-btn:hover {
+color: #06d6d6;
 }
 
 .userImage {
@@ -132,6 +174,7 @@ button, a {
     background-size: 40px;
     align-self: center;
     margin: 0 10px 0;
+    transition: 0.3s;
  
 }
 
@@ -140,39 +183,6 @@ button, a {
     width: 50px;
     height: 45px; 
     background-size: 45px;
-}
-
-.header {
-    top: 0;
-    position: fixed;
-    width: 100%;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:rgb(0, 32, 63);
-    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
-}
-
-.inline  {
-    display: inline-block;
-}
-.header h4 {
-    margin: 10px 5px;
-    font-weight: 100;
-}
-.logout-btn {
-    background: center / contain no-repeat url("images/logout.svg");
-    width: 28px;
-    height: 28px;
-    background-size: 25px;
-    margin: 10px 5px;
-
-}
-
-.logout-btn:hover {
-    background: center / contain no-repeat url("images/logout_hov.svg");
-    background-size: 28px;
 }
 
 .check-btn {
@@ -188,13 +198,14 @@ button, a {
     border: 0px;
     outline: none;
     cursor: pointer;
-    margin-bottom: 0;
+    margin: 0;
     padding: 0;
+    transition: 0.3s;
 } 
 
 .check-btn:hover {
 
-    background: center / contain no-repeat url("images/check.svg");
+    background: center / contain no-repeat url("images/check_submit.svg");
     background-size: 25px;
 }
 
@@ -205,7 +216,7 @@ button, a {
 }
 .check-btn:checked:hover {
 
-    background: center / contain no-repeat url("images/check_submit_cov.svg");
+    background: center / contain no-repeat url("images/check_hov.svg");
     background-size: 25px;
 }
 
@@ -216,6 +227,7 @@ button, a {
     height: 35px;
     background-size: 25px;
     cursor: pointer;
+    transition: 0.3s;
 } 
 
 .edit-btn:hover {
@@ -231,6 +243,7 @@ button, a {
     width: 35px;
     height: 35px;
     background-size: 20px;
+    transition: 0.3s;
 
 } 
 
@@ -245,6 +258,7 @@ button, a {
     width: 35px;
     height: 35px; 
     background-size: 20px;
+    transition: 0.3s;
 } 
 
 .delete-btn-1:hover {
@@ -253,51 +267,78 @@ button, a {
 }
 
 .add-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 10px;
+    max-width: 300px;
     border-radius: 4px;
     cursor: pointer;
-    padding: 10px;
+    text-align: center;
     text-transform: uppercase;
-    border-radius: 4px;
     font-weight: 500;
+    border: #fff solid 2px;
     color: #fff;
-    background-color: rgb(0, 32, 63);
+    background-color:#06d6d6;
     box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
-    
-   
+    transition: 0.3s;
 }  
 
 .add-btn:hover {
     font-size: 1.05rem;
-    background-color: rgb(90, 225, 225);
-    color:rgb(0, 32, 63);
+    background-color: #00203F;
 }
-.center { 
-    max-width: 300px;
-    margin: 30px auto;
-    text-align: center;
-    
-}
-
-
 
 table {
     height: auto;
-    width: 500px;
+    width: 600px;
     background-color: white;
     margin: 80px auto 20px;
-    padding: 20px;
+    border-collapse: collapse;
     border-radius: 4px;
     box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+    word-break: break-all;
 }
 
-.checked-no {
-    padding-left: 0;
+@media only screen and (min-width: 600px)  {
+    table {width: 600px;}
+    .task-on {width: 340px;};
+    .task-off {width: 420px;};
+
 }
+
+@media only screen and (max-width: 600px) and (min-width: 500px)  {
+    table {width: 480px;}
+    .task-on {width: 320px;};
+    .task-off {width: 400px;};
+
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px)  {
+    table {width: 380px;}
+    .task-on {width: 220px;};
+    .task-off {width: 300px;};
+
+}
+
+@media only screen and (max-width: 400px) and (min-width: 300px)  {
+    table {width: 280px;}
+    .task-on {width: 120px;};
+    .task-off {width: 200px;};
+
+}
+
+@media only screen and (max-width: 300px)  {
+    table {width: 280px;}
+    .task-on {width: 120px;};
+    .task-off {width: 200px;};
+
+}
+
 
 .checked-yes {
     margin-top: 10px;
     text-decoration: line-through;
-    color: rgb(90, 225, 225);
+    color: #06d6d6;
 }
 
 
@@ -317,7 +358,7 @@ table {
     flex-direction: column;
     justify-content: center;
     background-color: #fff;
-    color: rgb(0, 32, 63);
+    color: #00203F;
     text-align: center;
     padding: 20px;
   
@@ -331,34 +372,36 @@ table {
     width: 100%;
     height: 25px;
     border: none;
-    color: rgb(0, 32, 63);
+    color: #00203F;
     font-size: 14px;
     font-weight: 100;
-    border: solid 1px  rgb(0, 32, 63);
+    border: solid 1px  #00203F;
     margin: 5px 0;
     box-shadow: none;
+    transition: 0.3s;
   }
   .add-input:hover{
-     border-color: rgb(90, 225, 225);
+     border-color: #06d6d6;
   }
 
   #popup-btn,
   .popup-btn {
-    background-color: rgb(0, 32, 63);
+    background-color: #00203F;
     color: #fff;
     padding: 10px;
     text-transform: uppercase;
     border-radius: 4px;
     margin: 10px auto 0;
+    transition: 0.3s;
   }
   
   #popup-btn:hover,
   .popup-btn:hover {
-    color: rgb(90, 225, 225);
+    color: #06d6d6;
   }
   #cover {
     position: fixed;
-    top: 58px;
+    top: 60px;
     left: 0;
     z-index: 6;
     width: 100%;
@@ -367,34 +410,78 @@ table {
   
   }
   
-  
   .hidden {
     display: none;
   
   }
-
 
   footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color:   rgb(90, 225, 225);
-    padding: 3px;
+    background-color: #00203F;
     color: white;
     text-align: center;
     box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+footer p {
+    margin: 7px;
+    font-size: 0.7rem;
 }
 
 .drag-btn {
     background: center / contain no-repeat url("images/drag.svg");
     width: 35px;
-    height: 35px; 
+    height: 35px;
     background-size: 27px;
-    cursor: pointer;
+    background-color: #fff;
+    transition: 0.3s;
 }
 
 .drag-btn:hover, .drag-btn:active {
     background: center / contain no-repeat url("images/drag_hov.svg");
-    background-size: 35px;
+    background-size: 27px;
+}
+
+.drag-btn:active {
+    background: center / contain no-repeat url("images/drag_act.svg");
+    background-size: 27px;
+}
+
+/* ----------drag & drop-------- */
+
+
+.draggable {
+    cursor: move;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.placeholder {
+    background-color: #00000049;
+    
+}
+.clone-list {
+    background-color: #ffffff00;
+}
+.clone-todotable {
+    border-collapse: collapse;
+    border: none;
+}
+.clone-todotable td {
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+
+
+.dragging {
+    vertical-align: middle;
+    background: #fff;
+    border-top: none;
+    z-index: 999;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }

@@ -15,13 +15,15 @@ class listView
   public function html()
   { ?>
     <div class="header">
-      <h4>Lietotājs "<?= $_SESSION['username'] ?>" ir pieslēdzies!</h4>
-      <form method="POST" class="inline">
-        <input name="logOut" type="hidden">
-        <button type="submit" class="logout-btn"></button>
-      </form>
+      <h4>Lietotājs "<?= $_SESSION['username'] ?>" ir pieslēdzies! </br> <span class="top">Atslēgties</span>
+        <form method="POST" class="inline">
+          <input name="logOut" type="hidden">
+          <button type="submit" class="logout-btn"></button>
+        </form>
+      </h4>
+
     </div>
-    <table class="checked-no">
+    <table class="checked-no" id="todotable">
       <tbody id="unchecked">
         <?php
         $last_order_id = sizeof($this->tasklistUnchecked) + sizeof($this->tasklistChecked) + 1;
@@ -31,9 +33,7 @@ class listView
         ?>
 
           <tr order_id="<?= $order_id ?>" task="<?= $task['id'] ?>">
-            <td style="width: 40px;">
-              <div class="drag-btn"></div>
-            </td>
+            <td style="width: 40px;" class="drag-btn"></td>
             <td style="width: 40px;">
               <form action="/WB-final-project/?page=check&task_id=<?= $task['id'] ?>&order_id=<?= $ch_order_id ?>&checkbox_value=1" method="post">
                 <input type="checkbox" class="check-btn" name="checked" <?php if ($task["checked"] == '0') {
@@ -43,12 +43,12 @@ class listView
                                                                         } ?> onchange="this.form.submit()">
               </form>
             </td>
-            <td><?= $task["task"] ?></td>
-
-            <td style="width: 80px;">
+            <td class="task-on"><?= $task["task"] ?></td>
+            <td style="width: 40px;">
               <a href="/WB-final-project/?page=list&action=modify&task_id=<?= $task['id'] ?>&order_id=<?= $order_id ?>">
                 <div class="button edit-btn inline"></div>
-              </a>
+              </a></td>
+            <td style="width: 40px;">
               <a href="/WB-final-project/?page=delete&task_id=<?= $task['id'] ?>">
                 <div class="delete-btn inline"></div>
               </a>
@@ -62,7 +62,7 @@ class listView
       </tbody>
     </table>
     <div class="center">
-      <a href="/WB-final-project/?page=list&action=modify&last_order_id=<?= $last_order_id ?>" class="add-btn">Pievienot jaunu ierakstu</a></div>
+      <a href="/WB-final-project/?page=list&action=modify&last_order_id=<?= $last_order_id ?>" class="add-btn">Pievienot ierakstu</a></div>
 
     <table class="checked-yes">
       <tbody id="checked">
@@ -82,7 +82,7 @@ class listView
                                                                         } ?> onchange="this.form.submit()">
               </form>
             </td>
-            <td><?= $task["task"] ?></td>
+            <td class="task-off"><?= $task["task"] ?></td>
 
             <td style="width: 40px;">
 

@@ -45,7 +45,7 @@ if (!empty($_POST['username'])) {
   }
 }
 $form = new UserForm();
-$form->setLogRegText('Lai piekļūtu savam sarakstam, lūdzu ievadi lietotājvārdu un paroli. Ja tādu nav, dodies ');
+$form->setLogRegText('Lai piekļūtu savam sarakstam, lūdzu ievadi lietotājvārdu un paroli! </br> <span> Ja tādu nav, dodies</span> ');
 $form->setLogRegBtnText("reģistrēties");
 $form->setTogleLogReg("/WB-final-project/?page=register");
 $form->setTogleImgClass("userImage");
