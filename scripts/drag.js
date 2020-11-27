@@ -198,19 +198,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const dataList = JSON.stringify(data)
 
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('POST', '/WB-final-project/?page=move', true);
-    // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    // xhr.send(data);
-
-    console.log(dataList);
+    // console.log(dataList);
 
     let xmlHttp = new XMLHttpRequest(data);
-    // xmlHttp.onreadystatechange = function () {
-    //   if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-    //     alert(xmlHttp.responseText);
-    //   }
-    // }
+
     xmlHttp.open("post", '/WB-final-project/controllers/moveController.php');
     xmlHttp.send(dataList);
 

@@ -3,14 +3,6 @@ require_once __DIR__ . "/../helpers/database-wrapper.php";
 
 class listModel
 {
-  // public function getAll()
-  // {
-  //   $user_id = $_SESSION['id'];
-  //   $sql = "SELECT * FROM tasklist WHERE user_id=$user_id";
-  //   $response = DB::run($sql)->fetch_all(MYSQLI_ASSOC);
-  //   return $response;
-  // }
-
   public function getAllUnchecked()
   {
     $user_id = $_SESSION['id'];
