@@ -6,7 +6,7 @@ class listModel
   public function getAllUnchecked()
   {
     $user_id = $_SESSION['id'];
-    $sql = "SELECT * FROM tasklist WHERE user_id=$user_id AND checked='0'";
+    $sql = "SELECT * FROM tasklist WHERE user_id=$user_id AND checked='0' ORDER BY order_id";
     $response = DB::run($sql)->fetch_all(MYSQLI_ASSOC);
     return $response;
   }
@@ -14,7 +14,7 @@ class listModel
   public function getAllChecked()
   {
     $user_id = $_SESSION['id'];
-    $sql = "SELECT * FROM tasklist WHERE user_id=$user_id AND checked='1'";
+    $sql = "SELECT * FROM tasklist WHERE user_id=$user_id AND checked='1' ORDER BY order_id";
     $response = DB::run($sql)->fetch_all(MYSQLI_ASSOC);
     return $response;
   }
