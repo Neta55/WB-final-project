@@ -145,9 +145,9 @@ button, a {
     color: #fff;
     vertical-align: middle;
     text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    font-weight: 100;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    font-weight: 900;
     transition: 0.3s;
 }
 
