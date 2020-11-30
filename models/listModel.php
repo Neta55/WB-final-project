@@ -61,7 +61,7 @@ class listModel
     foreach ($dataList as $data) {
       $id = $data['task_id'];
       $orderId = $data['order_id'];
-      $sql = "UPDATE tasklist SET order_id = $orderId WHERE id=$id";
+      $sql = "UPDATE tasklist SET order_id = $orderId WHERE id=$id ORDER BY order_id";
       DB::run($sql);
     }
   }
